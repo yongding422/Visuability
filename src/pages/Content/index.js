@@ -7,6 +7,7 @@ const computerVisionClient = new ComputerVisionClient(
     { 'Ocp-Apim-Subscription-Key': 'b2b0f47751494c8493d87044ce5cecb0' } }),
       'https://visualbilty.cognitiveservices.azure.com/');
 
+//Get all images
 let images = window.document.querySelectorAll("img");
 
 for(let i = 0; i < images.length; i++){
@@ -21,19 +22,44 @@ for(let i = 0; i < images.length; i++){
 }
 
 function recognizedImage(imgTag) {
+
     const url = imgTag.src;
+
     computerVisionClient.describeImage(url)
-      .then(data => appendAlt(imgTag, data))
+      .then(data => {
+            if(data.captions?.length > 0)
+            {
+                if(data.captions[0].text === 'text')
+                {
+                    //Need to call OCR API to recognize the text
+                    recognizedText(url);
+                }
+                appendAlt(imgTag, data);
+            }
+        })
       .catch(console.error);
 }
 
-function appendAlt(imgTag, result) {
+function appendAlt(imgTag, altText) {
+
   console.log(result);
-  imgTag.alt = result.captions[0];
+
+  imgTag.alt = generateAltText(altText);
+
   console.log(imgTag.alt);
 
 //   filter for accuracy
 //   let accurateDesc = result.description.captions.filter((val, index) => {
 //     return 
 //   })
+}
+
+function generateAltText(data)
+{
+    return "";
+}
+
+function recognizedText(url)
+{
+  //Call OCR API
 }
