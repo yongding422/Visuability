@@ -59,7 +59,7 @@ function generateAltText(data, confidence){
   else if(confidence >= 0.1 && confidence < 0.2)
     ret = "It likely is " + data;
   else
-    ret = "Image cannbe be recoginized.";
+    ret = "Image cannot be recognized.";
 
   return ret;
 }
