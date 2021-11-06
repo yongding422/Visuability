@@ -31329,12 +31329,7 @@ var Popup = function Popup() {
     src: _assets_img_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
     className: "App-logo",
     alt: "logo"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Edit ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, "src/pages/Popup/Popup.jsx"), " and save to reload."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    className: "App-link",
-    href: "https://reactjs.org",
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, "Learn React!")));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, "Visuability"))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Popup);
@@ -35256,7 +35251,7 @@ module.exports.formatError = function (err) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b0d4e09034f7c5e4800a")
+/******/ 		__webpack_require__.h = () => ("1f9762af61c9822b564c")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
