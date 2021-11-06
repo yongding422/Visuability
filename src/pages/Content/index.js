@@ -55,7 +55,7 @@ function generateAltText(data, confidence){
   if(confidence >= 0.40)
     ret = data;
   else if(confidence >= 0.2 && confidence < 0.4)
-    ret = "It probally is " + data;
+    ret = "It probably is " + data;
   else if(confidence >= 0.1 && confidence < 0.2)
     ret = "It likely is " + data;
   else
