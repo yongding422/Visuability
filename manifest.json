@@ -1,0 +1,34 @@
+{
+    "manifest_version" : 3,
+    "name" : "Visuability Extension",
+    "description" : "A Chrome Extension that help to fix alt attribute missing from the Image tag based on ADA compliance.",
+    "version" : "1.0.0",
+    "permissions":[ "storage"],
+    "action": {
+        "default_icon" : {
+            "16": "public/images/icon.png",
+            "32": "public/images/icon_32.png",
+            "48": "public/images/icon_48.png",
+            "128": "public/images/icon_128.png"
+        },
+        "default_popup" : "src/popup.html"
+    },
+    "background":{
+        "service_worker" : "src/background.js"
+    },
+    "icons" : {
+        "16": "public/images/icon.png",
+        "32": "public/images/icon_32.png",
+        "48": "public/images/icon_48.png",
+        "128": "public/images/icon_128.png"
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "<all_urls>"
+          ],
+          "run_at": "document_end",
+          "js": ["src/content.js"]
+        }
+      ]
+}
