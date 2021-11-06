@@ -26,6 +26,7 @@ function recognizedImage(imgTag) {
 
     computerVisionClient.describeImage(url)
       .then(data => {
+
             if(data.captions?.length > 0)
             {
                 if(data.captions[0].text === 'text')
@@ -40,6 +41,10 @@ function recognizedImage(imgTag) {
 
                   appendAlt(imgTag, altText);
                 }
+            }
+            else
+            {
+              appendAlt(imgTag, "Image cannot be recognized.");
             }
         })
       .catch(console.error);
@@ -67,8 +72,12 @@ function generateAltText(data, confidence){
 function recognizedText(imgTag)
 {
   var url = imgTag.src;
+
   computerVisionClient.recognizePrintedText(true, url, {language:"en"})
   .then((result) => {
+
+    console.log(url, result);
+
     if(result.regions?.length > 0)
     {
       let text = "";
@@ -83,6 +92,10 @@ function recognizedText(imgTag)
 
         appendAlt(imgTag, altText);
       }
+    }
+    else
+    {
+      appendAlt(imgTag, "Image cannot be recognized.");
     }
   });
 }
