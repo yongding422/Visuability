@@ -20,9 +20,9 @@ npm start
 
 * Turn on Developer Mode
 
-* click on the Load unpack 
+* Click on the Load unpack 
 
-* go to project folder visuality and upload build 
+* Go to project folder visuality and select the build folder
 
 
 ## Technologies
